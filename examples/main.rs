@@ -1,10 +1,10 @@
 use std::time::Instant;
 
-mod lib;
-use crate::lib::backtest;
-use crate::lib::EnterMarketInfo;
-use crate::lib::ExitMarketInfo;
-use crate::lib::TradeInputResults;
+extern crate rusty_backtest;
+use crate::rusty_backtest::backtest;
+use crate::rusty_backtest::EnterMarketInfo;
+use crate::rusty_backtest::ExitMarketInfo;
+use crate::rusty_backtest::TradeInputResults;
 
 fn enter_market_function(market_info: EnterMarketInfo) -> bool {
     // if second row indicates
