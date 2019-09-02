@@ -1,0 +1,13 @@
+[package]
+name = "rusty_backtest"
+version = "0.0.1"
+authors = ["David Holtz <david.richard.holtz@gmail.com>"]
+edition = "2018"
+description = "Super fast backtest of any enter/exit strategy in pure rust"
+license = "MIT/Apache-2.0"
+
+[lib]
+name = "rusty_backtest"
+path = "src/lib.rs"
+
+[dependencies]
