@@ -1,8 +1,10 @@
+use serde::{Serialize};
+
 fn first<T>(v: &Vec<T>) -> Option<&T> {
     v.first()
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize)]
 pub struct TradeActionOut {
     pub index_in: i32,
     pub price_in: f64,
@@ -12,26 +14,26 @@ pub struct TradeActionOut {
     pub diff: f64,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct TradeActionIn {
     pub index_in: i32,
     pub price_in: f64,
     pub amt: i32,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct TradeInputResults {
     pub returns: BacktestResults,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct BacktestResults {
     pub calculated_returns: f64,
     pub tradesin: Vec<TradeActionIn>,
     pub tradesout: Vec<TradeActionOut>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct EnterMarketInfo<'a> {
     pub index: i32,
     pub current_price: f64,
@@ -40,7 +42,7 @@ pub struct EnterMarketInfo<'a> {
     pub data: &'a Vec<Vec<f64>>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct ExitMarketInfo<'a> {
     pub index: i32,
     pub current_price: f64,
@@ -52,7 +54,7 @@ pub struct ExitMarketInfo<'a> {
     pub diff: f64,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Serialize)]
 pub struct Portfolio {
     pub holding: i32,
     pub inmarket: i32,

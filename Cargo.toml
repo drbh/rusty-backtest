@@ -1,6 +1,6 @@
 [package]
 name = "rusty_backtest"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["David Holtz <david.richard.holtz@gmail.com>"]
 edition = "2018"
 description = "Super fast backtest of any enter/exit strategy in pure rust"
@@ -12,3 +12,4 @@ name = "rusty_backtest"
 path = "src/lib.rs"
 
 [dependencies]
+serde = { version = "1.0", features = ["derive"] }
